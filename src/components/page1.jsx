@@ -23,7 +23,7 @@ const Page1 = ({
                             type="text"
                             id="firstName"
                             value={firstName}
-                            className="border border-gray-300 rounded-md h-12 w-full px-4"
+                            className="rounded-md h-12 w-full px-4"
                             onChange={(e) => setFirstName(e.target.value)}
                         />
                     </div>
@@ -36,14 +36,14 @@ const Page1 = ({
                             type="text"
                             id="lastName"
                             value={lastName}
-                            className="border border-gray-300 rounded-md h-12 w-full px-4"
+                            className="rounded-md h-12 w-full px-4"
                             onChange={(e) => setLastName(e.target.value)}
                         />
                     </div>
                 </form>
 
                 {/* Button to toggle calendar */}
-                <div className="flex mx-auto justify-between items-center w-2/6 mt-12">
+                <div className="flex mx-auto justify-between items-center w-2/6 mt-2">
                     <span className="text-2xl font-semibold">Birthday</span>
                     <button
                         onClick={() => setShowCalendar(!showCalendar)}
@@ -55,7 +55,7 @@ const Page1 = ({
 
                 {/* Conditionally render the calendar */}
                 {showCalendar && (
-                    <div className="mt-4 flex justify-center">
+                    <div className="mt-1 flex justify-center">
                         <Example setBirthday={setBirthday} />
                     </div>
                 )}

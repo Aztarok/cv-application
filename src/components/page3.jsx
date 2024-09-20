@@ -113,8 +113,29 @@ const Page3 = ({
                         {localExperiences.map((exp, index) => (
                             <div
                                 key={index}
-                                className="bg-cyan-700 border-2 border-red-400 p-4 rounded-md shadow-md"
+                                className="bg-cyan-700 border-2 border-red-400 p-4 rounded-md shadow-md relative"
                             >
+                                <div className="absolute top-2 right-2 flex flex-col space-y-2">
+                                    <button
+                                        className="bg-yellow-500 text-white px-3 py-1 rounded text-sm"
+                                        onClick={() => {
+                                            setCurrentExperience({
+                                                ...exp,
+                                                index
+                                            });
+                                            setShowExperienceForm(true);
+                                            setIsEditing(true);
+                                        }}
+                                    >
+                                        Edit
+                                    </button>
+                                    <button
+                                        className="bg-red-500 text-white px-3 py-1 rounded text-sm"
+                                        onClick={() => deleteExperience(index)}
+                                    >
+                                        Delete
+                                    </button>
+                                </div>
                                 <h3 className="text-lg font-semibold mb-2">
                                     {exp.companyName}
                                 </h3>
@@ -138,27 +159,6 @@ const Page3 = ({
                                         {exp.jobDescription}
                                     </p>
                                 )}
-                                <div className="flex justify-end space-x-2 mt-4">
-                                    <button
-                                        className="bg-yellow-500 text-white px-4 py-2 rounded"
-                                        onClick={() => {
-                                            setCurrentExperience({
-                                                ...exp,
-                                                index
-                                            });
-                                            setShowExperienceForm(true);
-                                            setIsEditing(true);
-                                        }}
-                                    >
-                                        Edit
-                                    </button>
-                                    <button
-                                        className="bg-red-500 text-white px-4 py-2 rounded"
-                                        onClick={() => deleteExperience(index)}
-                                    >
-                                        Delete
-                                    </button>
-                                </div>
                             </div>
                         ))}
                     </div>

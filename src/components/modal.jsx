@@ -88,7 +88,7 @@ const Modal = ({
 
     return (
         <div className="absolute left-0 top-0 w-screen h-screen bg-slate-900 bg-opacity-50 flex justify-center items-center">
-            <div className="relative flex w-3/4 md:w-2/3 lg:w-1/2 h-3/4 sm:h-3/5 bg-blue-950 rounded-xl drop-shadow-[0_0px_10px_rgba(255,255,255,0.8)] shadow-white">
+            <div className="relative flex w-3/4 md:w-2/3 h-3/4  bg-blue-950 rounded-xl drop-shadow-[0_0px_10px_rgba(255,255,255,0.8)] shadow-white">
                 {renderPage()}
                 <button
                     onClick={() => setModal(false)}
